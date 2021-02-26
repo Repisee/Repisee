@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Post(models.Model):
-    title = models.TextField(default='this is cool')
-    desription = models.TextField()
-    data = models.TextField()
+    title = models.CharField(max_length=120)
+    desription = models.TextField(blank=True, null=True)
+    number = models.DecimalField(max_digits=1000, decimal_places=2)
+    comment = models.TextField()
